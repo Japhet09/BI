@@ -49,6 +49,19 @@ fahrenheit_to_celsius <- function(temp_F) {
 # 3. If water is above 100 degrees celsius, give a warning message
 # that the water is too hot and the tea will be ruined!
 
+fahrenheit_to_celsius <- function(temp_F){
+  temp_C <- (temp_F - 32) * 5 / 9
+  if (temp_C < 21){
+    print("turn on the stove")
+  }
+  else if (temp_C > 100){
+    print("Warning! Water is too hot")
+  }
+  else {
+    return (100 - temp_C)
+    }
+}
+
 # Test the function. If it works, that is.
 
 # Create a function which loops over a range of tempratures,
@@ -61,5 +74,9 @@ fahrenheit_to_celsius <- function(temp_F) {
 # Hint: syntax "next" can be used to jump to the next iteration.
 
 # Test the function
+temps <- c(32:250)
+for (i in temps){
+  fahrenheit_to_celsius(i)
+}
 
 # Compile these functions
