@@ -12,17 +12,25 @@
 # install packages ----
 
 # install the package "fortunes"
+install.packages("fortunes")
 
 # Load the package "fortunes" from library
+library(fortunes)
 
 # Try the function fortune() from package "fortunes"
+fortune()
 
 # Sequences ----
 
 # Give a sequence of number between 1 and 100 with 
 # a gap between 20 and 30 as well as 70 and 80.
+nums <- c(1:20,30:70,80:100)
+nums
 
 # Provide the mean, length and sum of this vector
+mean(nums)
+length(nums)
+sum(nums)
 
 # Functions ----
 

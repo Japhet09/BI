@@ -197,6 +197,7 @@ mySum_compiled
 # For these particular functions, it's quite close.
 # install.packages("microbenchmark")
 # install.packages("ggplot2")
+install.packages("microbenchmark")
 library(microbenchmark)
 library(ggplot2)
 x = rnorm(100)
@@ -315,7 +316,7 @@ vip_names <-
     "Moudud",
     "Kristina",
     "Greta Thunberg",
-    "Stefan Löfven",
+    "Stefan L?fven",
     "Jultomten"
   )
 male <- c(TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)
@@ -347,7 +348,7 @@ vip_names <-
     "Moudud",
     "Kristina",
     "Greta Thunberg",
-    "Stefan Löfven",
+    "Stefan L?fven",
     "Jultomten"
   )
 male <- c(TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)
