@@ -33,7 +33,13 @@ sum(x)
 # Consider the function
 fahrenheit_to_celsius <- function(temp_F) {
   temp_C <- (temp_F - 32) * 5 / 9
-  return(temp_C)
+  if (temp_C < 21){
+    print("Turn on the stove")
+  }
+  if (temp_C > 100){
+    print("Warning! The water is too hot")
+  }
+  return(100 - temp_C)
 }
 
 # Adjust this function so that it:
