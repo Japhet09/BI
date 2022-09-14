@@ -22,15 +22,18 @@ length(non_zero)
 # QUESTION 2 ----
 
 # a) Creating a csv from the table
+# first create vectors for each corresponding row
 WOMEN <- c(109, 112, 115, 121, 128, 132, 135, 140, 148)
 MEN <- c(120, 122, 124, 130, 136, 140, 143, 150, 155)
 GENDER <- c(rep("Female", 9), rep("Male", 9))
 W <- c(WOMEN, MEN)
 YEAR <- c(rep(2003:2011, 2))
+
+# then using the vectors to create the data frame
 question2 <- data.frame(W, GENDER, YEAR)
 question2
 
-# b) exporting the dataframe as a csv
+# b) exporting the data frame as a csv file
 write.table(
   question2,
   "/Users/mac/Desktop/BI/Python&R/lab1/question2.csv",
@@ -81,29 +84,31 @@ freedman[more_than30,]
 # QUESTION 4 ----
 # a) installing the Prestige package
 install.packages("car")
+# loading the library
 library(car)
 
-# b) dataframe of occupations with more than 50% women
+# b) data frame of occupations with more than 50% women
 sub_prestige_women <- Prestige[Prestige$women > 50,]
 
-# c) average prestige score
+# c) average prestige score for this sub group
 mean(sub_prestige_women$prestige, na.rm = TRUE)
 
 # d) average prestige score women less 50%
 below_50_women <- Prestige[Prestige$women < 50,]
 mean(below_50_women$prestige, na.rm = TRUE)
 
-# e)for loop
-# initialize empty vector to store the mean
-occu_type_mean <- c()
+# e)Average prestige score using a for loop
 
 # store all unique occupation in a vector dropping missing values
 unique_occupation <- unique(Prestige$type)
 unique_occupation <- unique_occupation[!is.na(unique_occupation)]
 
+# initialize empty vector to store the averages
+occu_type_average <- c()
+
 # loop through the unique occupations type
 for (i in unique_occupation) {
   x <- mean(Prestige[Prestige$type == i,]$prestige, na.rm = TRUE)
-  occu_type_mean <- c(occu_type_mean, x)
+  occu_type_average <- c(occu_type_average, x)
 }
-occu_type_mean
+occu_type_average
