@@ -4,7 +4,9 @@ the purpose is just to separate echa question from the other questions.
 the main function holds all the other functions '''
 
 def main():
-    pass
+    dvd_club_points()
+    bmi()
+    propert_taxes()
 
 # Exercise 1: DVD CLUB POINTS
 # A program that displays the user earnings based on the number of dvd purchased
@@ -53,19 +55,17 @@ def bmi():
     elif bmi_index >= 30:
         print(f"You have obesity with a bmi index of {bmi_index}") 
         
-    
-        
 # Exercise 3: Property Tax
 # Calculate the property tax based on the assessment value
-def propert_tax():
+def propert_taxes():
     # The percentage to get the assessment value from the actual value
-    percent_of_actual = 0.60
+    percent_actual_value = 0.60
     
     # Ask user for the actual property  value and convert it to float
     actual_value = float(input("Actual Property Value: "))
     
     # Calculate the assessment value from the actual property value
-    assessment_value = actual_value * percent_of_actual
+    assessment_value = actual_value * percent_actual_value
     
     # to get the tax per dollar divide $0.72 (72¢) by $100
     tax_per_dollar = 0.72 / 100
@@ -73,8 +73,7 @@ def propert_tax():
     #Calculate the property tax
     property_tax = assessment_value * tax_per_dollar
     
-    
-    pass
+    print(f"Assessment value : ${assessment_value}.  Propert Tax: ${property_tax}")
     
     
     
