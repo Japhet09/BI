@@ -1,7 +1,9 @@
 # Exercise 4: Sum of Numbers
+
 # initialize a variable to store the the sum of numbers
 sum_nums = 0
-# Loop continues as long as a positive number is entered
+
+# Initialize an infinite loop, it only break when user input a negative number
 while True:
     num = float(input("Number : "))
     # add the number to the sum if its positive
