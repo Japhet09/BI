@@ -5,8 +5,8 @@
 weight = float(input("Enter weight in kg: "))
 height = float(input("Enter height in meter: "))
 
-# Calculate the user bmi_index
-bmi_index = weight / (height**2)
+# Calculate the user bmi_index and round to 2 decimal places
+bmi_index = round((weight / (height**2)), 2)
 
 # Then display their bmi with a message depending on their bmi_index
 if bmi_index < 18.5:
