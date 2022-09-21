@@ -89,16 +89,35 @@ while True:
         break
     
 # Exercise 5: Maximum of Two values
+# Function accepts two float parameters and returns the maximum value
+
 def my_max(num1, num2):
+    # If num1 is smaller than num2, then return num2
     if num1 < num2:
         return num2
+    # if the conditon above is False, that means num1 is greater than num2
     else:
         return num1
         
     
+#Exercise 6: Test Average and Grade    
+#function that calcualte and returns the average of 5 score
+def calc_average(score1, score2, score3, score4, score5):
+    avg_score = (score1 + score2 + score3 + score4 + score5) / 5
+    return avg_score
     
-    
-    
+# Function that display the grade for the score
+def determine_grade(score):
+    if 90 <= score <= 100:
+        return "A"
+    elif 80 <= score <= 89:
+        return "B"
+    elif 70 <= score <= 79:
+        return "C"
+    elif 60 <= score <= 69:
+        return "D"
+    else:
+        return "F"
     
 if __name__ == "__main__":
     main()
