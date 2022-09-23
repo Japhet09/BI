@@ -4,7 +4,7 @@
 # Asking the user for number of videos  purchased and converting it into int
 videos_purchased = int(input("How many videos did you purchase this month?: "))
 
-# initialize a variable to store the user's earnigs
+# Initialize a variable to store the user's earnigs
 earnings = None
 
 # then update their earnings based on the videos_purchased and display a message
