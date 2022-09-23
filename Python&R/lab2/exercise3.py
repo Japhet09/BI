@@ -1,7 +1,8 @@
 # Exercise 3: Property Tax
-# A constant percentage of the actual value  to get the assessment value
+# A constant variable, percentage of the actual value  to get the assessment value
 PERCENT = 0.60
 
+# Using a main function to call the property tax function
 def main():
     # Ask user for the actual property  value and convert it to float
     actual_value = float(input("Actual Property Value: "))
@@ -9,6 +10,7 @@ def main():
 
 
 # Calculate the property tax based on the assessment value
+# the functions accepts one parameter (actual_value)
 def property_taxes(actual_value):
     # Calculate the assessment value as the 60% of the actual property value
     assessment_value = actual_value * PERCENT
