@@ -1,13 +1,13 @@
 # Exercise 5: Maximum of Two values
 # Create a wrapper function
 def main():
-    # Convert user input to integer values
+    # get and convert user input to integer
     num1 = int(input("Enter num1: "))
     num2 = int(input("Enter num2: "))
     print(f"The greater value is {my_max(num1, num2)}")
 
 
-# Function accepts two float parameters and returns the maximum value
+# Function accepts two integer parameters and returns the maximum value
 
 
 def my_max(num1, num2):
