@@ -5,7 +5,7 @@ sum_nums = 0
 
 # Initialize an infinite loop, break it when user input a negative number
 while True:
-    num = float(input("Number : "))
+    num = float(input("Enter a number, to exit enter a negative number : "))
     # add the number to the sum if its positive
     if num >= 0:
         sum_nums += num
