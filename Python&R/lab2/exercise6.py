@@ -20,7 +20,7 @@ def determine_grade(score):
         return "C"
     elif 60 <= score <= 69:
         return "D"
-    else:
+    elif score < 60:
         return "F"
 
 
