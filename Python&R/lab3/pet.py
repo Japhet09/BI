@@ -26,3 +26,5 @@ class Pet:
     def get_animal_type(self):
         return self.__animal_type
         
+    def __str__(self):
+        return f'Animal Info: \n Name: {self.__name} \n Type: {self.__animal_type} \n Age: {self.__age}'
