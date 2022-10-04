@@ -34,3 +34,8 @@ class Person:
 
     def set_phone(self, phone):
         self.__phone = phone
+
+# class instances
+my_info = Person('Japhet Alfred', 'Gävle, Sweden', 31, '0700277191')
+nelson = Person('Nelson Amani', 'Uppsala, Sweden', 21, '0700277191')
+john = Person('John Doe', 'Gamla stan, Uppsala', 24, '07028193342')
