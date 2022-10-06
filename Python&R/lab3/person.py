@@ -36,6 +36,6 @@ class Person:
         self.__phone = phone
 
 # class instances
-my_info = Person('Japhet Alfred', 'Gävle, Sweden', 31, '0700277191')
-nelson = Person('Nelson Amani', 'Uppsala, Sweden', 21, '0700277191')
-john = Person('John Doe', 'Gamla stan, Uppsala', 24, '07028193342')
+my_info = Person('Japhet Alfred', 'Gävle, Sweden', 31, '0709337991')
+nelson = Person('Nelson Amani', 'Uppsala, Sweden', 21, '070471490')
+john = Person('John Doe', 'Gamla stan, Uppsala', 24, '0702819342')
