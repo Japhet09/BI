@@ -1,6 +1,6 @@
 # Class name
 class Pet:
-    # initialize the class constructor
+    # initialize the class 
     def __init__(self, name, animal_type, age):
         self.__name = name
         self.__animal_type = animal_type
@@ -26,5 +26,6 @@ class Pet:
     def get_animal_type(self):
         return self.__animal_type
         
+    # A string method
     def __str__(self):
         return f'Animal Info: \n Name: {self.__name} \n Type: {self.__animal_type} \n Age: {self.__age}'
