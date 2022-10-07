@@ -2,12 +2,17 @@
 
 from pet import Pet
 
-'''
+
 def main():
 
     # Ask user the number of pets to be created
     total = int(input("Number of pets to create: "))
-    animals = create_pet(total)
+    
+    # a list of all pets created
+    pets = create_pet(total)
+    
+    # Give the user option to display all pets or only a certain type of pets
+    display = input("Display all pets (Yes/No): ").lower()
 
 
 # create a function that takes in the total number of pets to be
@@ -15,10 +20,10 @@ def main():
 
 
 def create_pet(num):
-    # initialize a variable to store each pet created
+    # initialize a list to store each pet created
     pets = []
-    #  using range function, loop through the number of pets
-    # creating a pet object for each iteration
+    
+    # create a pet object for each iteration
     for i in range(num):
         name = input("Name of the pet: ")
         type = input("Type of the pet: ")
@@ -33,7 +38,7 @@ if __name__ == "__main__":
     
     '''
 animals = [] 
-for i in range(1):
+for i in range(2):
     name = input("Name of the pet: ")
     type = input("Type of the pet: ")
     age = input("Age of the pet: ")
@@ -44,3 +49,4 @@ for i in animals:
     if i.get_animal_type() == 'cat':
         print(i)
 
+'''
