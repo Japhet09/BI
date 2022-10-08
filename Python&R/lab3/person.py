@@ -34,6 +34,10 @@ class Person:
 
     def set_phone(self, phone):
         self.__phone = phone
+        
+    # A string method to display the object
+    def __str__(self):
+        return f'Personal Info: \n Name: {self.__name} \n Address: {self.__address} \n Age: {self.__age} \n Phone: {self.__phone}'
 
 # class instances
 my_info = Person('Japhet Alfred', 'Gävle, Sweden', 31, '0709337991')
