@@ -1,4 +1,5 @@
-# Import the Pet class from the pet script file
+# Import the Pet class from the pet script file which 
+# will be used to create the objects
 
 from pet import Pet
 
@@ -12,14 +13,11 @@ def main():
     pets_list = create_pet(total)
     
     #display the pets (all or certain type)
-    
     display_pets(pets_list)
     
-     
-
 
 # A function that takes in the  number of pets to be created
-# as an argument and returns a list of objects representing pets
+# as an argument and returns a list of objects containing pets
 
 
 def create_pet(num):
@@ -32,23 +30,11 @@ def create_pet(num):
         type = input("Type of the pet: ")
         age = input("Age of the pet: ")
         pets.append(Pet(name, type, age))
-        
-    cat = Pet('kittie', 'cat', 4)
-    dog = Pet('doggie', 'dog', 2)
-    bird = Pet('bird', 'bird', 2)
-    cute = Pet('cute', 'cat', 6)
-    simba = Pet('simba', 'dog', 1)
-
-    pets.append(cat)  
-    pets.append(dog)
-    pets.append(bird)
-    pets.append(cute)
-    pets.append(simba)
 
     return pets
 
 # A function that takes a list of pets and displays all of them or a specific type 
-# depending on the user preferences.
+# depending on the user's choice.
 
 def display_pets(pets):
     # Give the user option to display all pets or only a certain type of pets
