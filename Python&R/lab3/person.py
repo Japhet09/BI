@@ -40,6 +40,6 @@ class Person:
         return f'Personal Info: \n Name: {self.__name} \n Address: {self.__address} \n Age: {self.__age} \n Phone: {self.__phone}'
 
 # class instances
-my_info = Person('Japhet Alfred', 'Gävle, Sweden', 31, '0709337991')
-nelson = Person('Nelson Amani', 'Uppsala, Sweden', 21, '070471490')
+my_info = Person('Japhet Alfred', 'Nygatan 27, Gävle', 31, '0709337991')
+nelson = Person('Nelson Amani', 'Flogstavågen, Uppsala', 21, '070471490')
 john = Person('John Doe', 'Gamla stan, Uppsala', 24, '0702819342')
