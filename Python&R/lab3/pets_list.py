@@ -9,23 +9,17 @@ def main():
     total = int(input("Number of pets to create: "))
     
     # a list of all pets created
-    pets = create_pet(total)
+    pets_list = create_pet(total)
     
-    # Give the user option to display all pets or only a certain type of pets
-    display_all = input("Display all pets (Yes/No): ").lower()
-    if display_all == "yes":
-        for i in pets:
-            print(i)
-    else:
-        pet_type = input("Type of pet to display: ").lower()
-        for i in pets:
-            if i.get_animal_type() == pet_type:
-                print(i)
-        
+    #display the pets (all or certain type)
+    
+    display_pets(pets_list)
+    
+     
 
 
-# create a function that takes in the total number of pets to be
-# created as an argument and returns objects representing pets
+# A function that takes in the  number of pets to be created
+# as an argument and returns a list of objects representing pets
 
 
 def create_pet(num):
@@ -53,6 +47,22 @@ def create_pet(num):
 
     return pets
 
+# A function that takes a list of pets and displays all of them or a specific type 
+# depending on the user preferences.
+
+def display_pets(pets):
+    # Give the user option to display all pets or only a certain type of pets
+    display_all = input("Display all pets (Yes/No): ").lower()
+    
+    if display_all == "yes":
+        for i in pets:
+            print(i)
+    else:
+        pet_type = input("Type of pet to display: ").lower()
+        for i in pets:
+            if i.get_animal_type() == pet_type:
+                print(i)
+    
 
 if __name__ == "__main__":
     main()
