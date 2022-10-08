@@ -1,4 +1,4 @@
-# Class name
+# Create a class called Pet 
 class Pet:
     # initialize the class 
     def __init__(self, name, animal_type, age):
