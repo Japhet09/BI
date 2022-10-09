@@ -11,7 +11,7 @@ This exercise was easy since it was similar to the car class we created in the l
 
 ## Exercise 2: Pet Class
 
-Similar to the person class, the pet class was also easy tp create. I initialized the pet class with the `__init__` method followed by the mututor and accessor methods and then the `__str__` method.
+Similar to the person class, the pet class was also easy tp create. I initialized the pet class with the `__init__` method followed by the mututor and accessor methods and then the `__str__` method. I created a separate script and imported the pet class which I then used to create the onjects.
 The second part of the exercise was a little bit challenging especially on how to store the objects in a list. I initially was not able to display what is in the list until I added the `__str__` method in the pet class.
 Also, It was challenging to figure out how to display only a certain type of pets. I finally found that I can compare the user input to the accessor method in the pet class (in this case the `get_animal_type` method)
 
