@@ -22,7 +22,7 @@ class Person:
     def get_phone(self):
         return self.__phone
 
-    # Create mututor methods
+    # Create mutator methods
     def set_name(self, name):
         self.__name = name
 
@@ -34,12 +34,13 @@ class Person:
 
     def set_phone(self, phone):
         self.__phone = phone
-        
+
     # A string method to display the object
     def __str__(self):
-        return f'Personal Info: \n Name: {self.__name} \n Address: {self.__address} \n Age: {self.__age} \n Phone: {self.__phone}'
+        return f"Personal Info: \n Name: {self.__name} \n Address: {self.__address} \n Age: {self.__age} \n Phone: {self.__phone}"
+
 
 # class instances
-my_info = Person('Japhet Alfred', 'Nygatan 27, Gävle', 31, '0709337991')
-nelson = Person('Nelson Amani', 'Flogstavågen, Uppsala', 21, '070471490')
-john = Person('John Doe', 'Gamla stan, Uppsala', 24, '0702819342')
+my_info = Person("Japhet Alfred", "Nygatan 27, Gävle", 31, "0709337991")
+nelson = Person("Nelson Amani", "Flogstavågen, Uppsala", 21, "070471490")
+john = Person("John Doe", "Gamla stan, Uppsala", 24, "0702819342")
