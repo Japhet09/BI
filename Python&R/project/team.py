@@ -28,77 +28,79 @@ class Team:
     @property
     def id(self):
         """Return the id of the team"""
-        print('getting id')
+        print("getting id")
         return self.__id
 
     # Read only method (will not have a correspomding mutator method/setter)
     @property
     def date(self):
         """Return the date the team was created"""
-        print('getting date')
+        print("getting date")
         return self.__date
+
     @property
     def name(self):
         """Return the name of the team"""
-        print('getting name')
+        print("getting name")
         return self._name
-    
+
     @name.setter
     def name(self, name):
         """Set the name of the team"""
-        print('setting name')
-        
+        print("setting name")
+
         # Check if name is an instance of class string
         # if name is not a string, raise a Value error
-       
+
         if type(name) == str:
             self._name = name
         else:
             raise ValueError("Name must be a string")
-        
+
     @property
     def type(self):
         """Return the type of the team"""
-        print('getting types')
+        print("getting types")
         return self._type
-    
+
     @type.setter
     def type(self, type):
         """Set the type of the team"""
-        print('setting type')
+        print("setting type")
         # team type can only be boys or girls
         if type.lower() in ["boys", "girls"]:
             self._type = type
         else:
             raise ValueError("Invalid team type: can only be boys/girls")
-        
+
     @property
     def fee_paid(self):
         """Return the status of the fee if paid or not"""
-        print('getting fee paid')
+        print("getting fee paid")
         return self._fee_paid
-    
+
     @fee_paid.setter
     def fee_paid(self, fee_paid):
         """Set the status of the fee if paid or not"""
-        print('setting fee paid')
+        print("setting fee paid")
         # chekc if fee_paid is of class boolean
         # if fee_paid is not of class boolean, then raise a value error
         if type(fee_paid) == bool:
             self._fee_paid = fee_paid
         else:
             raise ValueError("fee_paid must be a boolean True/False")
+
     @property
     def fee_amount(self):
         """Returns the amount of the fee paid"""
-        print('getting fee_amount')
+        print("getting fee_amount")
         return self._fee_amount
-    
+
     @fee_amount.setter
     def fee_amount(self, fee_amount):
         """Set the amount of the fee paid"""
-        print('setting fee_amount')
-        if  type(fee_amount) == int:
+        print("setting fee_amount")
+        if type(fee_amount) == int:
             self._fee_amount = fee_amount
         else:
             raise ValueError("fee_amount must be an integer")
@@ -107,5 +109,12 @@ class Team:
         return f"ID: {self.__id} Date: {self.__date} Name: {self._name} Fee Paid: {self._fee_paid} Fee Amount: {self._fee_amount}"
 
 
-t = Team('simba', 'boys',True, 5)
-print(t)
+t = Team("simba", "Boys", True, 99)
+t2 = Team("simba", "Boys", False, 99)
+t3 = Team("simba", "Boys", False, 99)
+t4 = Team("simba", "Boys", False, 99)
+t5 = Team("simba", "Boys", False, 99)
+t6 = Team("simba", "Boys", False, 99)
+t7 = Team("simba", "Boys", False, 99)
+t8 = Team("simba", "Boys", False, 99)
+print(t, t2, t3, t4, t5, t6, t7, t8, sep="\n")
