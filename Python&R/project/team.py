@@ -2,8 +2,6 @@
 import datetime
 
 """Team class definition."""
-
-
 class Team:
     """Team class for registering and administrating handball  teams."""
     #A class attribute that will be used to increment the id attribute for each object created
@@ -11,7 +9,7 @@ class Team:
     def __init__(self, name, type, fee_paid, fee_amount):
         """Initialize the team object"""
 
-        # use the datettime timestamp as a unique identifier
+        # use the class counter variable to initialize the id attribute
         self.__id = Team.counter # private attribute
         Team.counter += 1 # increment the
         self.__date = datetime.datetime.now()  # private attribute
