@@ -20,23 +20,20 @@ class Team:
         self.fee_amount = fee_amount
 
     # accessor methods for  the attributes (getter)
-    @property
-    def id(self):  # Read only method (will not have a correspomding mutator method/setter)
+
+    def get_id(self):  # Read only method (will not have a correspomding mutator method/setter)
         '''Return the id of the team'''
         return self.__id
 
-    @property
-    def date(self):  # Read only method (will not have a corresponding mutator/setter)
+    def get_date(self):  # Read only method (will not have a corresponding mutator/setter)
         '''Return the date the team was created'''
         return self.__date
 
-    @property
-    def name(self):
+    def get_name(self):
         '''Return the name of the team'''
         return self.name
     
-    @name.setter
-    def name(self, name):
+    def set_name(self, name):
         '''Set the name of the team'''
         # Check if name is an instance of class string
         # if name is not a string, raise a Value error
@@ -45,13 +42,11 @@ class Team:
             raise ValueError("Name must be a string")
         self._name = name
 
-    @property
-    def type(self):
+    def get_type(self):
         '''Return the type of the team'''
         return self.type
     
-    @type.setter
-    def type(self, type):
+    def set_type(self, type):
         '''Set the type of the team'''
         # team type can only be boys or girls
         team_type = ["boys", "girls"]
@@ -59,13 +54,11 @@ class Team:
             raise ValueError("Invalid team type: can only be boys/girls" )
         self.type = type
 
-    @property
-    def fee_paid(self):
+    def get_fee_paid(self):
         '''Return the status of the fee if paid or not'''
         return self.fee_paid
     
-    @fee_paid.setter
-    def fee_paid(self,fee_paid):
+    def set_fee_paid(self,fee_paid):
         '''Set the status of the fee if paid or not'''
         # chekc if fee_paid is of class boolean
         # if fee_paid is not of class boolean, then raise a value error
@@ -74,13 +67,11 @@ class Team:
             raise ValueError('fee_paid must be a boolean True/False')
         self.fee_paid = fee_paid
 
-    @property
-    def fee_amount(self):
+    def get_fee_amount(self):
         '''Returns the amount of the fee paid'''
         return self.fee_amount
         
-    @fee_amount.setter
-    def fee_amount(self,fee_amount):
+    def set_fee_amount(self,fee_amount):
         '''Set the amount of the fee paid'''
         an_int = isinstance(fee_amount, int)
         if not an_int:
