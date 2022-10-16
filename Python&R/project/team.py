@@ -6,13 +6,14 @@ import datetime
 
 class Team:
     """Team class for registering and administrating handball  teams."""
-
-    #
+    #A class attribute that will be used to increment the id attribute for each object created
+    counter = 1
     def __init__(self, name, type, fee_paid, fee_amount):
         """Initialize the team object"""
 
         # use the datettime timestamp as a unique identifier
-        self.__id = 1  # private attribute
+        self.__id = Team.counter # private attribute
+        Team.counter += 1 # increment the
         self.__date = datetime.datetime.now()  # private attribute
         self.name = name
         self.type = type
@@ -82,4 +83,6 @@ class Team:
         return f'ID: {self.__id} Date: {self.__date} Name: {self.name} Fee Paid: {self.fee_paid} Fee Amount: {self.fee_amount}'
         
 team = Team('simba', 'Boys', True, 500)
-print(team)
+team2 = Team('simba', 'Girls', True, 400)
+team3 = Team('simba', 'Boys', True, 500)
+print(team, team2, team3,sep='\n')
