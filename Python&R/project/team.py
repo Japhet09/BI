@@ -106,15 +106,14 @@ class Team:
             raise ValueError("fee_amount must be an integer")
 
     def __str__(self):
-        return f"ID: {self.__id} Date: {self.__date} Name: {self._name} Fee Paid: {self._fee_paid} Fee Amount: {self._fee_amount}"
+        return f"ID: {self.__id} Date: {self.__date} Name: {self._name} Type: {self._type} Fee Paid: {self._fee_paid} Fee Amount: {self._fee_amount}"
 
 
 t = Team("simba", "Boys", True, 99)
-t2 = Team("simba", "Boys", False, 99)
-t3 = Team("simba", "Boys", False, 99)
-t4 = Team("simba", "Boys", False, 99)
-t5 = Team("simba", "Boys", False, 99)
-t6 = Team("simba", "Boys", False, 99)
-t7 = Team("simba", "Boys", False, 99)
-t8 = Team("simba", "Boys", False, 99)
-print(t, t2, t3, t4, t5, t6, t7, t8, sep="\n")
+t2 = Team("quenss", "girls", False, 0)
+t3 = Team("luton", "Boys", True, 990)
+t4 = Team("jkt", "Boys", True, 990)
+t5 = Team("atleti", "Boys", True, 990)
+t6 = Team("crown", "girls", True, 99)
+
+print(t, t2, t3, t4, t5, t6, sep="\n")
