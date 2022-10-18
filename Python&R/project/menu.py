@@ -45,6 +45,12 @@ def show_team_by_type(teams_list):
         if team.type == type:
             print(team)
 
+def show_all_teams(teams_list):
+    '''Print all teams created by the user'''
+    for team in teams_list:
+        print(team)
+
+
 
             
             
