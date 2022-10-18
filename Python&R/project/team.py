@@ -16,7 +16,7 @@ class Team:
         # use the class counter variable to initialize the id attribute
         self.__id = Team.counter  # private attribute
         Team.counter += 1  # increment the class variable
-        self.__date = datetime.datetime.now()  # private attribute
+        self.__date = datetime.datetime.now().date()  # private attribute
         self.name = name
         self.type = type
         self.fee_paid = fee_paid
@@ -106,9 +106,11 @@ class Team:
             raise ValueError("fee_amount must be an integer")
 
     def __str__(self):
-        return f"ID: {self.__id} Date: {self.__date} Name: {self._name} Type: {self._type} Fee Paid: {self._fee_paid} Fee Amount: {self._fee_amount}"
+        n = '\n'
+        return f"ID: {self.__id}, Date: {self.__date}, Name: {self._name}, Type: {self._type}, Fee Paid: {self._fee_paid}, Fee Amount: {self._fee_amount}"
 
 
+"""
 t = Team("simba", "Boys", True, 99)
 t2 = Team("quenss", "girls", False, 0)
 t3 = Team("luton", "Boys", True, 990)
@@ -117,3 +119,4 @@ t5 = Team("atleti", "Boys", True, 990)
 t6 = Team("crown", "girls", True, 99)
 
 print(t, t2, t3, t4, t5, t6, sep="\n")
+"""
