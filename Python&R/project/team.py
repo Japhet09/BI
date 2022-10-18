@@ -16,7 +16,8 @@ class Team:
         # use the class counter variable to initialize the id attribute
         self.__id = Team.counter  # private attribute
         Team.counter += 1  # increment the class variable
-        self.__date = datetime.datetime.now().date()  # private attribute
+        now = datetime.datetime.now()
+        self.__date = now.strftime('%Y/%m/%d') # private attribute
         self.name = name
         self.type = type
         self.fee_paid = fee_paid
@@ -119,7 +120,7 @@ class Team:
         n = "\n"
         return f"ID: {self.__id}, Date: {self.__date}, Name: {self._name}, Type: {self._type}, Fee Paid: {self._fee_paid}, Fee Amount: {self._fee_amount}"
 
-'''
+
 t = Team("simba", "Boys", True, 99)
 t2 = Team("quenss", "girls", False, 0)
 t3 = Team("luton", "Boys", True, 990)
@@ -133,4 +134,4 @@ c = []
 for t in lst:
     c.append(t.store_data())
 print(c)
-'''
+
