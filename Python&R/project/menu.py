@@ -38,6 +38,13 @@ def show_team(teams_list):
             print(team)
 
 
+def show_team_by_type(teams_list):
+    '''Print team based on type'''
+    type = input("Type of team to show: ").strip()
+    for team in teams_list:
+        if team.type == type:
+            print(team)
+
 
             
             
