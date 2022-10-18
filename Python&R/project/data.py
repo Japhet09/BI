@@ -1,10 +1,9 @@
 import datetime
 import json
-
-teams = [
+teams =[
     {
         "id": 1,
-        "date": datetime.date(2022, 10, 18),
+        "date": "2022/10/19",
         "name": "simba",
         "type": "Boys",
         "fee": True,
@@ -12,7 +11,7 @@ teams = [
     },
     {
         "id": 2,
-        "date": datetime.date(2022, 10, 18),
+        "date": "2022/10/19",
         "name": "quenss",
         "type": "girls",
         "fee": False,
@@ -20,7 +19,7 @@ teams = [
     },
     {
         "id": 3,
-        "date": datetime.date(2022, 10, 18),
+        "date": "2022/10/19",
         "name": "luton",
         "type": "Boys",
         "fee": True,
@@ -28,7 +27,7 @@ teams = [
     },
     {
         "id": 4,
-        "date": datetime.date(2022, 10, 18),
+        "date": "2022/10/19",
         "name": "jkt",
         "type": "Boys",
         "fee": True,
@@ -36,7 +35,7 @@ teams = [
     },
     {
         "id": 5,
-        "date": datetime.date(2022, 10, 18),
+        "date": "2022/10/19",
         "name": "atleti",
         "type": "Boys",
         "fee": True,
@@ -44,32 +43,34 @@ teams = [
     },
     {
         "id": 6,
-        "date": datetime.date(2022, 10, 18),
+        "date": "2022/10/19",
         "name": "crown",
         "type": "girls",
         "fee": True,
         "fee_amount": 100,
     },
 ]
-'''
+"""
 for team in teams:
     if team['id'] == 1:
         team['name'] = 'yangaan'
         print(team)
 #print(teams)
-'''
+"""
+
+
 def show_team(teams):
     """Print team information based on the team id"""
     team_id = int(input("Id of time you would like to show: "))
     for team in teams:
-        if team['id']== team_id:
+        if team["id"] == team_id:
             print(team)
-            
+
+
 show_team(teams)
 
 
-
-'''
+"""
 def write_data(data):
     
     with open('team_data.txt', 'w') as f:
@@ -95,4 +96,4 @@ def read_data(data):
     return t
 
 a = read_data('team_data.txt')
-'''
+"""
