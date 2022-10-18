@@ -4,20 +4,15 @@ from team import Team
 
 def main():
     # print(create_team())
-    t = Team("simba", "Boys", True, 99)
-    t2 = Team("quenss", "girls", False, 0)
-    t3 = Team("luton", "Boys", True, 990)
-    t4 = Team("jkt", "Boys", True, 990)
-    t5 = Team("atleti", "Boys", True, 990)
-    t6 = Team("crown", "girls", True, 99)
-    teams_list = [t, t2, t3, t4, t5, t6]
+    teams = [] # a list of dictinary of teams created
+    create_team(teams)
+ 
+   # update_team(teams)
     
-    update_team(teams_list)
-    
-    show_all_teams(teams_list)
+    show_team(teams)
 
 
-def create_team():
+def create_team(teams):
     """Return a new team an instance from the Team class"""
 
     # Get the name, type , fee status and fee amount from the user
@@ -27,22 +22,26 @@ def create_team():
     fee_amount = int(input("Fee amount: "))
 
     # create and return the team object
-    return Team(name, type, fee_paid, fee_amount)
+    team = Team(name, type, fee_paid, fee_amount)
+    
+    teams.append(team.store_data())
+    return teams
+    
 
 
-def show_team(teams_list):
+def show_team(teams):
     """Print team information based on the team id"""
-    id = int(input("Id of time you would like to show: "))
-    for team in teams_list:
-        if team.id == id:
+    team_id = int(input("Id of time you would like to show: "))
+    for team in teams:
+        if team['id']== team_id:
             print(team)
 
 
 def show_team_by_type(teams_list):
     '''Print team based on type'''
-    type = input("Type of team to show: ").strip()
+    team_type = input("Type of team to show: ").strip()
     for team in teams_list:
-        if team.type == type:
+        if team['type'] == team_type:
             print(team)
 
 def show_all_teams(teams_list):
@@ -51,11 +50,26 @@ def show_all_teams(teams_list):
         print(team)
 
 
-
-            
-            
-        
+def update_team(teams_list):
+    '''Update the team name, type, fee status or fee amount'''
+    team_id = int(input('Enter id of team to update: '))
+    item = input('Field to update')
+    new_value = input('New value to update: ')
     
+    for t in teams_list:
+        if t.id == team_id:
+            if t.name == item:
+                t.name = new_value
+            elif t.type == item:
+                t.type = new_value
+            elif t.fee_paid == item:
+                t.fee_paid = bool(new_value)
+            elif t.fee_amount == item:
+                t.fee_amount = int(new_value)
+    return teams_list
+                
+            
+            
     
     
 if __name__ == "__main__":
