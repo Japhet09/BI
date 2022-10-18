@@ -30,6 +30,14 @@ def create_team():
     return Team(name, type, fee_paid, fee_amount)
 
 
+def show_team(teams_list):
+    """Print team information based on the team id"""
+    id = int(input("Id of time you would like to show: "))
+    for team in teams_list:
+        if team.id == id:
+            print(team)
+
+
 
             
             
