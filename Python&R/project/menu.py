@@ -1,15 +1,67 @@
 # This program
 from team import Team
+teams =[
+    {
+        "id": 1,
+        "date": "2022/10/19",
+        "name": "simba",
+        "type": "Boys",
+        "fee": True,
+        "fee_amount": 99,
+    },
+    {
+        "id": 2,
+        "date": "2022/10/19",
+        "name": "quenss",
+        "type": "girls",
+        "fee": False,
+        "fee_amount": 0,
+    },
+    {
+        "id": 3,
+        "date": "2022/10/19",
+        "name": "luton",
+        "type": "Boys",
+        "fee": True,
+        "fee_amount": 990,
+    },
+    {
+        "id": 4,
+        "date": "2022/10/19",
+        "name": "jkt",
+        "type": "Boys",
+        "fee": True,
+        "fee_amount": 990,
+    },
+    {
+        "id": 5,
+        "date": "2022/10/19",
+        "name": "atleti",
+        "type": "Boys",
+        "fee": True,
+        "fee_amount": 990,
+    },
+    {
+        "id": 6,
+        "date": "2022/10/19",
+        "name": "crown",
+        "type": "girls",
+        "fee": True,
+        "fee_amount": 100,
+    },
+]
 
 
 def main():
     # print(create_team())
-    teams = [] # a list of dictinary of teams created
-    create_team(teams)
+    #teams = [] # a list of dictinary of teams created
+    #create_team(teams)
  
    # update_team(teams)
     
-    show_team(teams)
+    
+    update_team()
+    show_all_teams(teams)
 
 
 def create_team(teams):
@@ -50,23 +102,23 @@ def show_all_teams(teams_list):
         print(team)
 
 
-def update_team(teams_list):
+def update_team():
     '''Update the team name, type, fee status or fee amount'''
     team_id = int(input('Enter id of team to update: '))
     item = input('Field to update')
-    new_value = input('New value to update: ')
-    
-    for t in teams_list:
-        if t.id == team_id:
-            if t.name == item:
-                t.name = new_value
-            elif t.type == item:
-                t.type = new_value
-            elif t.fee_paid == item:
-                t.fee_paid = bool(new_value)
-            elif t.fee_amount == item:
-                t.fee_amount = int(new_value)
-    return teams_list
+    new_value = input('New value: ')
+    global teams
+    for t in teams:
+        if t['id'] == team_id:
+            if t['name'] == item:
+                t['name'] = new_value
+            elif t['type'] == item:
+                t['type'] = new_value
+            elif t['fee_paid'] == item:
+                t['fee_paid'] = bool(new_value)
+            elif t['fee_amount'] == item:
+                t['fee_amount'] = int(new_value)
+    return teams
                 
             
             
