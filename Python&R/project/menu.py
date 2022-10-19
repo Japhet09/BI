@@ -2,38 +2,11 @@
 from team import Team
 
 teams = [
-        {
-            "id": 1,
-            "date": "2022/10/19",
-            "name": "SIMBA",
-            "type": "BOYS",
-            "fee_paid": True,
-            "fee_amount": 99,
-        },
-        {
-            "id": 2,
-            "date": "2022/10/19",
-            "name": "YANGA",
-            "type": "GIRLS",
-            "fee_paid": True,
-            "fee_amount": 99,
-        },
-        {
-            "id": 3,
-            "date": "2022/10/19",
-            "name": "AZAM",
-            "type": "BOYS",
-            "fee_paid": True,
-            "fee_amount": 99,
-        },
     ]
 
 
 def main():
-    #update_fees()
-   # show_all_teams(teams)
-   display_menu()
-   update_submenu()
+    pass
 
 
 
@@ -87,10 +60,6 @@ def show_all_teams(teams_list):
     """Print all teams created by the user"""
     for team in teams_list:
         print(team)
-
-
-def update_team():
-    """Update the team name, type, fee status """
  
 
 def update_name():
