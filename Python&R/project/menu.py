@@ -97,7 +97,15 @@ def update_fees():
                 team['fee_amount'] = 0        
     return teams
     
-    
+def delete_team():
+    '''Delete a team from the list of teams based on the id'''
+    global teams 
+    team_id = int(input("Enter ID of the team you want to delete:"))
+    # remove dictionary from list of dictionaries 
+    # by slicing and list comprehension
+    teams[:] = [team for team in teams if team.get('id') != team_id]
+    return teams
+        
 def display_menu():
     print('\t MENU ')
     print('1) Create a new team ')
