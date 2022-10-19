@@ -1,4 +1,6 @@
-
+# import menu to be able to use all
+# the functions in the menu script
+# import sys to use it to exit the program
 import sys
 import menu
 
