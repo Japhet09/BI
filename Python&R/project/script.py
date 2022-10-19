@@ -8,6 +8,7 @@ SHOW_BY_ID = 2
 SHOW_BY_TYPE = 3
 SHOW_ALL_TEAMS = 4
 UPDATE_TEAMS = 5
+DELETE_TEAM = 6
 QUIT_CHOICE = 0
 
 teams = menu.teams
@@ -38,6 +39,8 @@ def main():
             menu.show_all_teams(teams)
         elif choice == QUIT_CHOICE:
             sys.exit("Exiting the program")
+        elif choice == DELETE_TEAM:
+            menu.delete_team()
         elif choice ==UPDATE_TEAMS:
             #display update sub menu
             menu.update_submenu()
