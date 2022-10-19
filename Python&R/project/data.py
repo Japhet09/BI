@@ -1,53 +1,54 @@
 import datetime
 import json
-teams =[
+
+team = [
     {
         "id": 1,
         "date": "2022/10/19",
-        "name": "simba",
-        "type": "Boys",
+        "name": "SIMBA",
+        "type": "BOYS",
         "fee": True,
         "fee_amount": 99,
     },
     {
         "id": 2,
         "date": "2022/10/19",
-        "name": "quenss",
-        "type": "girls",
-        "fee": False,
-        "fee_amount": 0,
+        "name": "QUENSS",
+        "type": "GIRLS",
+        "fee": True,
+        "fee_amount": 99,
     },
     {
         "id": 3,
         "date": "2022/10/19",
-        "name": "luton",
-        "type": "Boys",
+        "name": "LUTON",
+        "type": "BOYS",
         "fee": True,
-        "fee_amount": 990,
+        "fee_amount": 99,
     },
     {
         "id": 4,
         "date": "2022/10/19",
-        "name": "jkt",
-        "type": "Boys",
-        "fee": True,
-        "fee_amount": 990,
+        "name": "JKT",
+        "type": "BOYS",
+        "fee": False,
+        "fee_amount": 0,
     },
     {
         "id": 5,
         "date": "2022/10/19",
-        "name": "atleti",
-        "type": "Boys",
-        "fee": True,
-        "fee_amount": 990,
+        "name": "ATLETI",
+        "type": "BOYS",
+        "fee": False,
+        "fee_amount": 0,
     },
     {
         "id": 6,
         "date": "2022/10/19",
-        "name": "crown",
-        "type": "girls",
+        "name": "CROWN",
+        "type": "GIRLS",
         "fee": True,
-        "fee_amount": 100,
+        "fee_amount": 99,
     },
 ]
 """
@@ -66,9 +67,8 @@ def show_team(teams):
         if team["id"] == team_id:
             print(team)
 
-
-show_team(teams)
-
+for t in team:
+    print(t["id"])
 
 """
 def write_data(data):
