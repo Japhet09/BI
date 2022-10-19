@@ -30,8 +30,10 @@ teams = [
 
 
 def main():
-    update_fees()
-    show_all_teams(teams)
+    #update_fees()
+   # show_all_teams(teams)
+   display_menu()
+   update_submenu()
 
 
 
@@ -127,9 +129,20 @@ def update_fees():
     return teams
     
     
+def display_menu():
+    print('\t MENU ')
+    print('1) Create a new team ')
+    print('2) Show a team using ID ')
+    print('3) Show a team using type ')
+    print('4) Show all teams ')
+    print('5) Update team ')
+    print('0) Quit Program ')
     
-    
-    
+def update_submenu():
+    print('\t UPDATE SUB MENU')
+    print('51) Update Team Name')
+    print('52) Update Team Type')
+    print('53) Update Team Fee Status')
     
     
     
