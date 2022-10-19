@@ -10,7 +10,7 @@ class Team:
     # A class attribute that will be used to increment the id attribute for each object created
     counter = 1
 
-    def __init__(self, name, type, fee_paid, fee_amount=99):
+    def __init__(self, name, type, fee_paid):
         """Initialize the team object"""
 
         # use the class counter variable to initialize the id attribute
@@ -21,7 +21,7 @@ class Team:
         self.name = name
         self.type = type
         self.fee_paid = fee_paid
-        self.fee_amount = fee_amount
+        self.fee_amount = 99
 
     # accessor methods for  the attributes (getter)
 
