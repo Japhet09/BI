@@ -21,11 +21,9 @@ UPDATE_TYPE = 52
 UPDATE_FEES = 53
 
 def main():
-    # the choice variable controlls the loop
-    #choice = 0
     while True:
         #DISPLAY THE MENU
-        menu.display_menu()
+        menu.display_main_menu()
         
         # get the user choice
         choice = int(input('Enter choice: '))
@@ -43,7 +41,7 @@ def main():
             menu.delete_team()
         elif choice ==UPDATE_TEAMS:
             #display update sub menu
-            menu.update_submenu()
+            menu.display_update_submenu()
             choice = int(input('Enter Fiels to update'))
             if choice == UPDATE_NAME:
                 menu.update_name()

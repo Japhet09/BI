@@ -106,7 +106,7 @@ def delete_team():
     teams[:] = [team for team in teams if team.get('id') != team_id]
     return teams
         
-def main_menu():
+def display_main_menu():
     print('\t MENU ')
     print('1) Create a new team ')
     print('2) Show a team using ID ')
@@ -116,7 +116,7 @@ def main_menu():
     print('6) Delete team ')
     print('0) Quit Program ')
     
-def update_submenu():
+def display_update_submenu():
     print('\t UPDATE SUB MENU')
     print('51) Update Team Name')
     print('52) Update Team Type')
