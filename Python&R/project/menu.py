@@ -30,7 +30,8 @@ teams = [
 
 
 def main():
-    show_team_by_type(teams)
+    update_fees()
+    show_all_teams(teams)
 
 
 
@@ -87,23 +88,53 @@ def show_all_teams(teams_list):
 
 
 def update_team():
-    """Update the team name, type, fee status or fee amount"""
-    team_id = int(input("Enter id of team to update: "))
-    item = input("Field to update")
-    new_value = input("New value: ")
-    global teams
-    for t in teams:
-        if t["id"] == team_id:
-            if t["name"] == item:
-                t["name"] = new_value
-            elif t["type"] == item:
-                t["type"] = new_value
-            elif t["fee_paid"] == item:
-                t["fee_paid"] = bool(new_value)
-            elif t["fee_amount"] == item:
-                t["fee_amount"] = int(new_value)
+    """Update the team name, type, fee status """
+ 
+
+def update_name():
+    '''Update the team name based on the team id'''
+    global teams 
+    team_id = int(input("Enter team id to update: "))
+    new_name = input("New Team Name").upper()
+    for team in teams:
+        if team['id'] == team_id:
+            team['name'] = new_name         
     return teams
 
+def update_type():
+    '''Update the type of the team'''
+    global teams 
+    team_id = int(input("Enter team id to update: "))
+    new_type = input("New Team type").upper()
+    for team in teams:
+        if team['id'] == team_id:
+            team['type'] = new_type         
+    return teams
 
+def update_fees():
+    '''Update the fee status and fee amount '''
+    global teams 
+    team_id = int(input("Enter team id to update: "))
+    new_fee_paid = input("New Fee status (Y/N): ").upper()
+    for team in teams:
+        if team['id'] == team_id:
+            if new_fee_paid == 'Y':
+                team['fee_paid'] = True
+                team['fee_amount'] = 99
+            elif new_fee_paid == 'N':
+                team['fee_paid'] = False
+                team['fee_amount'] = 0        
+    return teams
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 if __name__ == "__main__":
     main()
