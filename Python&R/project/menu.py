@@ -30,10 +30,8 @@ teams = [
 
 
 def main():
+    show_team_by_type(teams)
 
-    for i in range(3):
-        create_team()
-    print(teams)
 
 
 def create_team():
@@ -52,20 +50,34 @@ def create_team():
     return teams
 
 
-def show_team(teams):
-    """Print team information based on the team id"""
-    team_id = int(input("Id of time you would like to show: "))
-    for team in teams:
-        if team["id"] == team_id:
-            print(team)
+def show_team_by_id(teams):
+    """Return team information based on the team id"""
+    while True:
+        team_id = int(input("Id of team you would like to show: "))
+        for team in teams:
+            if team["id"] == team_id:
+                return (print(team))  
+            elif team["id"] != team_id:
+                continue # ask user to enter the team id again
 
 
 def show_team_by_type(teams_list):
-    """Print team based on type"""
-    team_type = input("Type of team to show: ").strip()
-    for team in teams_list:
-        if team["type"] == team_type:
-            print(team)
+    """Return team information based on type"""
+    while True:
+        team_type = input("Type of team to show (B/G): ").strip()
+        if team_type.upper() == 'B':
+            type = 'BOYS'
+        elif team_type.upper() == 'G':
+            type = 'GIRLS'
+        else:
+            type = None
+            print('Please Enter a valid team type')
+            
+        for team in teams_list:
+            if team["type"] == type:
+                return (print(team))
+            else:
+                continue
 
 
 def show_all_teams(teams_list):
