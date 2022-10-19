@@ -11,30 +11,30 @@ class Team:
     counter = 1
 
     def __init__(self, name, type, fee_paid):
-        """Initialize the team object"""
-
+        """
+        Initialize the team object
+        """
         # use the class counter variable to initialize the id attribute
         self.__id = Team.counter  # private attribute
-        Team.counter += 1  # increment the class variable
+        Team.counter += 1  # increment the class variable for the next object creation
+        
+        # get the current time and  then store the date as a string
         now = datetime.datetime.now()
         self.__date = now.strftime("%Y/%m/%d")  # private attribute
         self.name = name
         self.type = type
         self.fee_paid = fee_paid
-        self.fee_amount = 99
+        self.fee_amount = 99 # default fee amount
 
-    # accessor methods for  the attributes (getter)
 
-    # Read only method for the id(will not have a correspomding mutator method/setter)
-    
+    # Read only method for the id (will not have a corresponding mutator method since it is private) 
     @property
     def id(self):
         """Return the id of the team"""
         print("getting id")
         return self.__id
 
-    # Read only method for the date(will not have a correspomding mutator method/setter)
-    
+    # Read only method for the date(will not have a corresponding mutator method since it is private)
     @property
     def date(self):
         """Return the date the team was created"""
@@ -55,10 +55,9 @@ class Team:
         print("setting name")
 
         # if name is not a string, raise a Value error
-        if type(name) == str:
-            self._name = name.upper()
-        else:
+        if type(name) != str:
             raise ValueError("Name must be a string")
+        self._name = name.upper()
 
     # accessor method for getting the type of the team
     @property
@@ -92,7 +91,7 @@ class Team:
     def fee_paid(self, fee_paid):
         """Set the status of the fee if paid or not"""
         print("setting fee paid")
-        # Fee is paid (Yes) or not (No)
+        # Fee is paid True(Y) or False (N)
         if fee_paid.upper() == "Y":
             self._fee_paid = True
         elif fee_paid.upper() == "N":
@@ -110,19 +109,21 @@ class Team:
     # mutator method for setting the fee amount
     @fee_amount.setter
     def fee_amount(self, fee_amount):
-        """Set the amount of the fee paid"""
+        """
+        Set the amount of the fee paid
+        depending on the fee status
+        """
         print("setting fee_amount")
-        # if fee_amount is not an integer raise ValueError
-        if type(fee_amount) == int:
-            if self._fee_paid == True:
+        # If fee is paid, set fee_amount to default value(99)
+        if self._fee_paid == True:
                 self._fee_amount = fee_amount
-            else:
-                self._fee_amount = 0
         else:
-            raise ValueError("Amount must be an integer")
+            self._fee_amount = 0
+        
 
     # A method to to store the team information as a dictionary
     def store_data(self):
+        '''Return a dictionary of team information'''
         return {
             "id": self.__id,
             "date": self.__date,
