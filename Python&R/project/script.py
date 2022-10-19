@@ -1,7 +1,5 @@
 
 import sys
-import datetime
-from team import Team
 import menu
 
 # constants for the menu items
@@ -12,7 +10,7 @@ SHOW_ALL_TEAMS = 4
 UPDATE_TEAMS = 5
 QUIT_CHOICE = 0
 
-teams = []
+teams = menu.teams
 print(teams)
 
 
