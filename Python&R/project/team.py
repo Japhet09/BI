@@ -17,17 +17,16 @@ class Team:
         # use the class counter variable to initialize the id attribute
         self.__id = Team.counter  # private attribute
         Team.counter += 1  # increment the class variable for the next object creation
-        
+
         # get the current time and  then store the date as a string
         now = datetime.datetime.now()
         self.__date = now.strftime("%Y/%m/%d")  # private attribute
         self.name = name
         self.type = type
         self.fee_paid = fee_paid
-        self.fee_amount = 99 # default fee amount
+        self.fee_amount = 99  # default fee amount
 
-
-    # Read only method for the id (will not have a corresponding mutator method since it is private) 
+    # Read only method for the id (will not have a corresponding mutator method since it is private)
     @property
     def id(self):
         """Return the id of the team"""
@@ -116,14 +115,13 @@ class Team:
         print("setting fee_amount")
         # If fee is paid, set fee_amount to default value(99)
         if self._fee_paid == True:
-                self._fee_amount = fee_amount
+            self._fee_amount = fee_amount
         else:
             self._fee_amount = 0
-        
 
     # A method to to store the team information as a dictionary
     def store_data(self):
-        '''Return a dictionary of team information'''
+        """Return a dictionary of team information"""
         return {
             "id": self.__id,
             "date": self.__date,
@@ -138,12 +136,12 @@ class Team:
         return f"ID: {self.__id}, Date: {self.__date}, Name: {self._name}, Type: {self._type}, Fee Paid: {self._fee_paid}, Fee Amount: {self._fee_amount}"
 
 
-t = Team('simba', "B", 'Y')
-t2 = Team("quenss", "g", 'Y')
-t3 = Team("luton", "B", 'Y')
-t4 = Team("jkt", "B", 'N')
-t5 = Team("atleti", "B", 'N')
-t6 = Team("crown", "g", 'Y')
+t = Team("simba", "B", "Y")
+t2 = Team("quenss", "g", "Y")
+t3 = Team("luton", "B", "Y")
+t4 = Team("jkt", "B", "N")
+t5 = Team("atleti", "B", "N")
+t6 = Team("crown", "g", "Y")
 
 lst = [t, t2, t3, t4, t5, t6]
 c = []
