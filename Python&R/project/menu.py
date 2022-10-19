@@ -1,14 +1,12 @@
-# This program
+# This script contains functions to be imported 
+# by other programs to create, show, update  and delete teams
+
+# import the TEam class to be used to create teams(instance
+# of the Teams class)
 from team import Team
 
-teams = [
-    ]
-
-
-def main():
-    pass
-
-
+# instatiate a team variable to store all the teams created
+teams = []
 
 def create_team():
     """Return a new team an instance from the Team class"""
@@ -101,7 +99,7 @@ def delete_team():
     '''Delete a team from the list of teams based on the id'''
     global teams 
     team_id = int(input("Enter ID of the team you want to delete:"))
-    # remove dictionary from list of dictionaries 
+    # remove dictionary(team) from list of dictionaries(teams) 
     # by slicing and list comprehension
     teams[:] = [team for team in teams if team.get('id') != team_id]
     return teams
@@ -122,10 +120,3 @@ def display_update_submenu():
     print('52) Update Team Type')
     print('53) Update Team Fee Status')
     
-    
-    
-    
-    
-    
-if __name__ == "__main__":
-    main()
