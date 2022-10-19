@@ -1,72 +1,21 @@
 # This program
 from team import Team
 teams =[
-    {
-        "id": 1,
-        "date": "2022/10/19",
-        "name": "simba",
-        "type": "Boys",
-        "fee": True,
-        "fee_amount": 99,
-    },
-    {
-        "id": 2,
-        "date": "2022/10/19",
-        "name": "quenss",
-        "type": "girls",
-        "fee": False,
-        "fee_amount": 0,
-    },
-    {
-        "id": 3,
-        "date": "2022/10/19",
-        "name": "luton",
-        "type": "Boys",
-        "fee": True,
-        "fee_amount": 990,
-    },
-    {
-        "id": 4,
-        "date": "2022/10/19",
-        "name": "jkt",
-        "type": "Boys",
-        "fee": True,
-        "fee_amount": 990,
-    },
-    {
-        "id": 5,
-        "date": "2022/10/19",
-        "name": "atleti",
-        "type": "Boys",
-        "fee": True,
-        "fee_amount": 990,
-    },
-    {
-        "id": 6,
-        "date": "2022/10/19",
-        "name": "crown",
-        "type": "girls",
-        "fee": True,
-        "fee_amount": 100,
-    },
+
 ]
 
 
 def main():
-    # print(create_team())
-    #teams = [] # a list of dictinary of teams created
-    #create_team(teams)
+    
+    for i in range(3):
+        create_team()
+    print(teams)
  
-   # update_team(teams)
-    
-    
-    update_team()
-    show_all_teams(teams)
 
 
-def create_team(teams):
+def create_team():
     """Return a new team an instance from the Team class"""
-
+    global teams
     # Get the name, type , fee status and fee amount from the user
     name = input("Name of the team: ").strip()
     type = input("Type of team: ").strip()
@@ -77,6 +26,7 @@ def create_team(teams):
     team = Team(name, type, fee_paid, fee_amount)
     
     teams.append(team.store_data())
+    #print(teams)
     return teams
     
 
