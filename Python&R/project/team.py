@@ -127,15 +127,13 @@ class Team:
             "date": self.__date,
             "name": self._name,
             "type": self._type,
-            "fee": self._fee_paid,
+            "fee_paid": self._fee_paid,
             "fee_amount": self._fee_amount,
         }
-
-    # A method to show the string representation of the team object
     def __str__(self):
         return f"ID: {self.__id}, Date: {self.__date}, Name: {self._name}, Type: {self._type}, Fee Paid: {self._fee_paid}, Fee Amount: {self._fee_amount}"
 
-
+'''
 t = Team("simba", "B", "Y")
 t2 = Team("quenss", "g", "Y")
 t3 = Team("luton", "B", "Y")
@@ -149,3 +147,4 @@ c = []
 for t in lst:
     c.append(t.store_data())
 print(c)
+'''
