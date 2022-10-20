@@ -1,8 +1,9 @@
 # import menu to be able to use all
 # the functions in the menu script
 # import sys to use it to exit the program
+from os import read
 import sys
-import menu
+from menu import Menu
 
 # constants for the menu items
 CREATE = 1
@@ -11,11 +12,9 @@ SHOW_BY_TYPE = 3
 SHOW_ALL_TEAMS = 4
 UPDATE_TEAMS = 5
 DELETE_TEAM = 6
+SAVE_DATA = 7
+READ_DATA = 8
 QUIT_CHOICE = 0
-
-teams = menu.teams
-print(teams)
-
 
 # constants for the SUB MENU FOR UPDATE_TEAMS
 UPDATE_NAME = 51
@@ -25,32 +24,36 @@ UPDATE_FEES = 53
 def main():
     while True:
         #DISPLAY THE MENU
-        menu.display_main_menu()
+        Menu.display_main_menu()
         
         # get the user choice
         choice = int(input('Enter choice: '))
         if choice == CREATE:
-            menu.create_team()
+            Menu.create_team()
         elif choice == SHOW_BY_ID:
-            menu.show_team_by_id(teams)
+            Menu.show_team_by_id()
         elif choice == SHOW_BY_TYPE:
-            menu.show_team_by_type(teams)
+            Menu.show_team_by_type()
         elif choice == SHOW_ALL_TEAMS:
-            menu.show_all_teams(teams)
+            Menu.show_all_teams()
         elif choice == QUIT_CHOICE:
             sys.exit("Exiting the program")
+        elif choice == SAVE_DATA:
+            Menu.save_data()
+        elif choice == READ_DATA:
+            Menu.read_data()
         elif choice == DELETE_TEAM:
-            menu.delete_team()
+            Menu.delete_team()
         elif choice ==UPDATE_TEAMS:
             #display update sub menu
-            menu.display_update_submenu()
+            Menu.display_update_submenu()
             choice = int(input('Enter Fiels to update'))
             if choice == UPDATE_NAME:
-                menu.update_name()
+                Menu.update_name()
             elif choice == UPDATE_TYPE:
-                menu.update_type()
+                Menu.update_type()
             elif choice == UPDATE_FEES:
-                menu.update_fees()
+                Menu.update_fees()
         else:
             print("Error: Invalid choice" )
             

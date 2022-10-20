@@ -6,6 +6,7 @@
 from team import Team
 # json module to save and load team data
 import json
+import ast
 
 # All teams created will be stored in the variable teams
 teams = []
@@ -132,7 +133,7 @@ class Menu:
         print('53) Update Team Fee Status')
         
     def save_data():
-        with open('data.txt', 'w') as f:
+        with open('data.txt', 'a+') as f:
             # write each teams to aaon a new line
             for t in teams:
                 f.write('%s\n' % t)
@@ -142,7 +143,17 @@ class Menu:
             
     def read_data():
         global teams
-        teams = [json.loads(team) for team in open('data.txt','r') ]        
+        n = []
+        with open('data.txt', 'r') as f:
+            f = f.read()
+            for line in f:
+                team = line.strip('\n')
+                n.append(team)
+                
+        for i in n:
+            teams.append(ast.literal_eval(i))
+            
+                   
         return teams
         
     

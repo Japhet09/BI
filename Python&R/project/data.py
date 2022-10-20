@@ -97,3 +97,6 @@ def read_data(data):
 
 a = read_data('team_data.txt')
 """
+
+dd = "{'id': 1, 'date': '2022/10/20', 'name': 'SASA', 'type': 'BOYS', 'fee_paid': False, 'fee_amount': 0}"
+d = json.loads(dd)
