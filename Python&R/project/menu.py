@@ -1,31 +1,37 @@
 # This script contains functions to be imported 
 # by other programs to create, show, update  and delete teams
 
-# import the TEam class to be used to create teams(instance
-# of the Teams class)
+# import the Team class to be used to create teams(instances
+# of the Team class)
 from team import Team
 
-# instatiate a team variable to store all the teams created
+# All teams created will be stored in the variable teams
 teams = []
 
 def create_team():
-    """Return a new team an instance from the Team class"""
+    """Return a list teams  instances from the Team class"""
+    # We use global teams variable since we are going to modify the list
     global teams
+    
     # Get the name, type , fee status  from the user
     name = input("Name of the team: ").strip()
     type = input("Type of team (B/G): ").strip()
     fee_paid = input("Fee paid (Y/N: ").strip()
 
     # create and return the team object
-    team = Team(name, type, fee_paid)
-
-    teams.append(team.store_data())
-    # print(teams)
+    t = Team(name, type, fee_paid)
+    
+    # Call the store_data method from the Team class to store the team
+    # object as a dictionary
+    team = t.store_data()
+    
+    # Append the dictionary (team) to the list of teams
+    teams.append(team)
     return teams
 
 
 def show_team_by_id(teams):
-    """Return team information based on the team id"""
+    """Print team information using the team id"""
     while True:
         team_id = int(input("Id of team you would like to show: "))
         for team in teams:
@@ -36,7 +42,7 @@ def show_team_by_id(teams):
 
 
 def show_team_by_type(teams_list):
-    """Return team information based on type"""
+    """Print team information using team type"""
     while True:
         team_type = input("Type of team to show (B/G): ").strip()
         if team_type.upper() == 'B':
