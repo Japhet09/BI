@@ -135,9 +135,9 @@ class Menu:
     def save_data():
         with open('data.txt', 'a+') as f:
             # write each teams to aaon a new line
-            for t in teams:
-                f.write('%s\n' % t)
-                print('done')
+            for team in teams:
+                f.write(json.dumps(team, indent= 4))
+                
 
             
             
@@ -146,14 +146,10 @@ class Menu:
         n = []
         with open('data.txt', 'r') as f:
             f = f.read()
-            for line in f:
-                team = line.strip('\n')
-                n.append(team)
-                
-        for i in n:
-            teams.append(ast.literal_eval(i))
-            
-                   
+            for team in f:
+                teams.append(json.loads(team)  )          
         return teams
+    
+    
         
     

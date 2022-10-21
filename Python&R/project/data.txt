@@ -1,2 +1,22 @@
-{'id': 1, 'date': '2022/10/20', 'name': 'SIMBA', 'type': 'BOYS', 'fee_paid': True, 'fee_amount': 99}
-{'id': 2, 'date': '2022/10/20', 'name': 'YOUNG', 'type': 'GIRLS', 'fee_paid': True, 'fee_amount': 99}
+{
+    "id": 1,
+    "date": "2022/10/20",
+    "name": "DDDD",
+    "type": "GIRLS",
+    "fee_paid": false,
+    "fee_amount": 0
+}{
+    "id": 2,
+    "date": "2022/10/20",
+    "name": "HGDGDD",
+    "type": "GIRLS",
+    "fee_paid": false,
+    "fee_amount": 0
+}{
+    "id": 3,
+    "date": "2022/10/20",
+    "name": "RTET",
+    "type": "BOYS",
+    "fee_paid": true,
+    "fee_amount": 99
+}
