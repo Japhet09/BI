@@ -87,9 +87,16 @@ class Menu:
         global teams 
         team_id = int(input("Enter team id to update: "))
         new_type = input("New Team type").upper()
+        if new_type.upper() == 'B':
+            type = 'BOYS'
+        elif new_type.upper() == 'G':
+            type = 'GIRLS'
+        else:
+            type = None
+            print('Please Enter a valid team type')
         for team in teams:
             if team['id'] == team_id:
-                team['type'] = new_type         
+                team['type'] = type         
         return teams
 
     def update_fees():
