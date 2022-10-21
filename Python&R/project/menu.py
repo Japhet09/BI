@@ -124,6 +124,8 @@ class Menu:
         print('4) Show all teams ')
         print('5) Update team ')
         print('6) Delete team ')
+        print('7) Save Data')
+        print('8) Read Data')
         print('0) Quit Program ')
         
     def display_update_submenu():
