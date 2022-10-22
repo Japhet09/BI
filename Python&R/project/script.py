@@ -1,8 +1,8 @@
 # import menu to be able to use all
 # the functions in the menu script
 # import sys to use it to exit the program
-from os import read
 import sys
+import time
 from menu import Menu
 
 # constants for the menu items
@@ -25,7 +25,7 @@ def main():
     while True:
         #DISPLAY THE MENU
         Menu.display_main_menu()
-        
+
         # get the user choice
         choice = int(input('Enter choice: '))
         if choice == CREATE:
@@ -37,7 +37,9 @@ def main():
         elif choice == SHOW_ALL_TEAMS:
             Menu.show_all_teams()
         elif choice == QUIT_CHOICE:
-            sys.exit("Exiting the program")
+            print("Exiting the program")
+            time.sleep(2)
+            sys.exit()
         elif choice == SAVE_DATA:
             Menu.save_data()
         elif choice == READ_DATA:
@@ -56,7 +58,6 @@ def main():
                 Menu.update_fees()
         else:
             print("Error: Invalid choice" )
-            
+
 if __name__ == "__main__":
     main()
-        
