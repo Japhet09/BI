@@ -66,7 +66,7 @@ def main():
             else:
                 print("Error: Invalid choice, use the menu")
                 continue
-        except:
+        except ValueError:
             print("Choice should be an integer")
             continue
 
