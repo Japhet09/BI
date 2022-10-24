@@ -59,6 +59,8 @@ class Team:
         return self._cancel
 
     # All the mutator methods for the class data attributes
+    # The id and date attributes have no corresponding mutator methods
+    # Since they are not supposed to be changed by the user ( Read Only)
     @name.setter
     def name(self, name):
         """Set the name of the team"""
