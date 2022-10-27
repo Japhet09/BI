@@ -118,6 +118,3 @@ class Team:
             f"Fee Amount: {self.fee_amount}\n"
             f"Cancelled on : {self.cancel}\n"
         )
-a = Team('gg', 'b','y')
-print(a)
-print(a.id, a.date)
