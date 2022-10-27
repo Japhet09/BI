@@ -162,7 +162,7 @@ class Interface:
                 if t.fee_paid == True:
                     paid += 1
             print(
-                f"Percentage of teams which paid the fee: {paid/len(Interface.teams) * 100:.1f}%"
+                f"Percentage of teams which paid the fee: {paid/len(Interface.teams):.1%}"
             )
         except ZeroDivisionError:
             print("Please make sure there are teams in the list")
