@@ -1,13 +1,10 @@
 # =====================================================================
-# This script contains a Menu class with methods  to create, show,
+# This script contains an Interface class with methods  to create, show,
 # update  and delete teams as well as methods to save the data to a txt
 # file and read it from the text file
 # =====================================================================
 # import team class
 from team import Team
-
-# All teams created will be stored in the variable teams
-# we use a global variable to allow all methods to have access to it
 
 
 class Interface:
@@ -40,7 +37,7 @@ class Interface:
         except ValueError:
             print("Team ID should be an integer")
 
-    # DISPLAY TEAM BY TYPE
+    # DISPLAY TEAMS BY TYPE
     def show_team_by_type():
         """Display team information by type"""
         try:
@@ -51,7 +48,7 @@ class Interface:
         except:
             print("Team type should be Boys/Girls")
 
-    # DISPLAY ALL TEAM
+    # DISPLAY ALL TEAMS
     def show_all_teams():
         """Print all teams created by the user"""
         for t in Interface.teams:

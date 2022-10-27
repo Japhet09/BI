@@ -10,7 +10,7 @@ class Team:
     # A class attribute that will be used to increment the id attribute for each object created
     counter = 1
 
-    def __init__(self, name, type, fee_paid, fee_amount = 99, cancel = None):
+    def __init__(self, name, type, fee_paid, fee_amount=99, cancel=None):
         """Initialize the team object"""
         # use the class counter variable to initialize the id attribute
         self.__id = Team.counter  # private attribute
@@ -55,10 +55,10 @@ class Team:
 
     @property
     def cancel(self):
-        '''Return the date the team canclled participating'''
+        """Return the date the team canclled participating"""
         return self._cancel
 
-    # All the mutator methods for the class data attributes
+    # All the mutator methods for the  data attributes
     # The id and date attributes have no corresponding mutator methods
     # Since they are not supposed to be changed by the user ( Read Only)
     @name.setter
@@ -106,7 +106,7 @@ class Team:
             # cancellation date will be none for participating team
             self._cancel = cancel
 
-    # String representation of the class
+    # String representation of the object
     def __str__(self):
         return (
             f"Team Info\n"
