@@ -10,7 +10,7 @@ class Team:
     # A class attribute that will be used to increment the id attribute for each object created
     counter = 1
 
-    def __init__(self, name, type, fee_paid, fee_amount=99, cancel=None):
+    def __init__(self, name, type, fee_paid, fee_amount = 99, cancel = None):
         """Initialize the team object"""
         # use the class counter variable to initialize the id attribute
         self.__id = Team.counter  # private attribute
@@ -110,11 +110,14 @@ class Team:
     def __str__(self):
         return (
             f"Team Info\n"
-            f"ID: {self.__id}\n"
-            f"Date: {self.__date}\n"
-            f"Name: {self._name}\n"
-            f"Type: {self._type}\n"
-            f"Fee Paid: {self._fee_paid}\n"
-            f"Fee Amount: {self._fee_amount}\n"
-            f"Cancelled on : {self._cancel}\n"
+            f"ID: {self.id}\n"
+            f"Date: {self.date}\n"
+            f"Name: {self.name}\n"
+            f"Type: {self.type}\n"
+            f"Fee Paid: {self.fee_paid}\n"
+            f"Fee Amount: {self.fee_amount}\n"
+            f"Cancelled on : {self.cancel}\n"
         )
+a = Team('gg', 'b','y')
+print(a)
+print(a.id, a.date)
