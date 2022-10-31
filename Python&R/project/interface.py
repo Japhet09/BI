@@ -1,9 +1,10 @@
-# =====================================================================
-# This script contains an Interface class with methods  to create, show,
+# =========================================================================
+# This program contains an Interface class with methods  to create, show,
 # update  and delete teams as well as methods to save the data to a txt
-# file and read it from the text file
-# =====================================================================
-# import team class
+# file and read it from the text file. It imports the Team class from the
+# team.py file
+# ========================================================================
+# import Team class
 from team import Team
 
 
@@ -22,7 +23,7 @@ class Interface:
         type = input("Type of team (B/G): ").strip()
         fee_paid = input("Fee paid (Y/N: ").strip()
 
-        # Create and append the team to the list of teams
+        # Create and append the team to the list of teams(class variable)
         Interface.teams.append(Team(name, type, fee_paid))
         return Interface.teams
 
@@ -51,6 +52,7 @@ class Interface:
     # DISPLAY ALL TEAMS
     def show_all_teams():
         """Print all teams created by the user"""
+        # Loop through the teams list and print them
         for t in Interface.teams:
             print(t)
 
@@ -111,13 +113,14 @@ class Interface:
                 else:
                     print("There is no team with that ID")
             return Interface.teams
-        except:
-            print("Invalid team ID")
+        except ValueError:
+            print("Invalid team ID ")
 
     # SAVE ALL THE TEAM INFO IN A TEXT FILE
     def save_data():
         """Write each object to a file as a string"""
         with open("my_teams.txt", "w") as outfile:
+            # assign each team to a variable as a string
             for t in Interface.teams:
                 t_txt = f"{t.id}, {t.date}, {t.name}, {t.type}, {t.fee_paid}, {t.fee_amount}, {t.cancel}"
                 # write each team to the file in separate lines
@@ -142,14 +145,14 @@ class Interface:
             for i in t_temp_list:
                 t = i.rstrip("\n")
                 t = t.split(",")
-                # strip any whitespace from the data
+                # strip any whitespace from the data and create team and append to the teams list
                 Interface.teams.append(
                     Team(
-                        t[2].strip(),
-                        t[3].strip(),
-                        t[4].strip(),
-                        t[5].strip(),
-                        t[6].strip(),
+                        t[2].strip(),  # name
+                        t[3].strip(),  # type
+                        t[4].strip(),  # fee_paid
+                        t[5].strip(),  # amount
+                        t[6].strip(),  # cancellation date
                     )
                 )
 
@@ -158,19 +161,24 @@ class Interface:
         print(f"Total Number of teams: {len(Interface.teams)}")
         try:
             paid = 0
+            total_fees = 0
+
             for t in Interface.teams:
                 if t.fee_paid == True:
                     paid += 1
+                    total_fees += t.fee_amount
             print(
                 f"Percentage of teams which paid the fee: {paid/len(Interface.teams):.1%}"
             )
+            print(f"Total Amount of Fees Paid: {total_fees}")
+
         except ZeroDivisionError:
             print("Please make sure there are teams in the list")
 
     # CANCEL TEAM PARTCIPATION BY ADDING A CANCELLATION DATE TO THE OBJECT(TEAM)
     def participation():
         team_id = int(input("ID of team which cancelled: "))
-        cancel = input("Enter the date of cancellation: ")
+        cancel = input("Enter the date of cancellation (YYYY-MM-DD): ")
         for t in Interface.teams:
             if t.id == team_id:
                 t.cancel = cancel
