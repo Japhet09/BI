@@ -1,3 +1,4 @@
+# The Team class will be imported into the interface program 
 # import datetime module to get the date
 import datetime
 
@@ -58,7 +59,7 @@ class Team:
         """Return the date the team canclled participating"""
         return self._cancel
 
-    # All the mutator methods for the  data attributes
+    # Mutator methods for the  data attributes
     # The id and date attributes have no corresponding mutator methods
     # Since they are not supposed to be changed by the user ( Read Only)
     @name.setter
@@ -92,7 +93,7 @@ class Team:
     def fee_amount(self, fee_amount):
         """Set the amount of the fee paid depending on the fee status"""
         # If fee is paid, set fee_amount to default value(99)
-        if self._fee_paid == True:
+        if self._fee_paid:
             self._fee_amount = fee_amount
         else:
             self._fee_amount = 0
