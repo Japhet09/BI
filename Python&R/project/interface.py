@@ -20,8 +20,8 @@ class Interface:
 
         # Get the name, type , fee status  from the user and remove whitespaces
         name = input("Name of the team: ").strip()
-        type = input("Type of team (B/G): ").strip()
-        fee_paid = input("Fee paid (Y/N: ").strip()
+        type = input("Type of team (Boys/Girls): ").strip()
+        fee_paid = input("Fee paid (Yes/No: ").strip()
 
         # Create and append the team to the list of teams(class variable)
         Interface.teams.append(Team(name, type, fee_paid))
@@ -42,7 +42,7 @@ class Interface:
     def show_team_by_type():
         """Display team information by type"""
         try:
-            team_type = input("Type of team to show (B/G): ").strip()
+            team_type = input("Type of team to show (Boys/Girls): ").strip()
             for t in Interface.teams:
                 if t.type == team_type:
                     print(t)
@@ -151,7 +151,7 @@ class Interface:
                         t[2].strip(),  # name
                         t[3].strip(),  # type
                         t[4].strip(),  # fee_paid
-                        t[5].strip(),  # amount
+                        int(t[5].strip()),  # amount
                         t[6].strip(),  # cancellation date
                     )
                 )
