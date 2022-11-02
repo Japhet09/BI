@@ -60,13 +60,11 @@ class Interface:
     def update_name():
         """Update the team name based on the team id"""
         try:
-            team_id = int(input("Enter team id to update: "))
+            team_id = int(input("Enter id of team to update: "))
             new_name = input("New Team Name: ")
             for t in Interface.teams:
                 if t.id == team_id:
                     t.name = new_name
-                else:
-                    print("There is no team with that ID")
             return Interface.teams
         except ValueError:
             print("Team ID should be an integer")
@@ -75,13 +73,11 @@ class Interface:
     def update_type():
         """Update the type of the team"""
         try:
-            team_id = int(input("Enter team id to update: "))
+            team_id = int(input("Enter id of team to update: "))
             new_type = input("New Team type: ")
             for t in Interface.teams:
                 if t.id == team_id:
                     t.type = new_type
-                else:
-                    print("There is no team with that ID")
             return Interface.teams
         except ValueError:
             print("Enter valid ID")
@@ -90,8 +86,8 @@ class Interface:
     def update_fees():
         """Update the fee status and fee amount"""
         try:
-            team_id = int(input("Enter team id to update: "))
-            new_fee_paid = input("New Fee status (Y/N): ")
+            team_id = int(input("Enter id of team to update: "))
+            new_fee_paid = input("New Fee status (Yes/No): ")
             new_fee_amount = int(input("New Fee amount: "))
             for t in Interface.teams:
                 if t.id == team_id:
@@ -110,8 +106,6 @@ class Interface:
             for t in Interface.teams:
                 if t.id == team_id:
                     Interface.teams.remove(t)
-                else:
-                    print("There is no team with that ID")
             return Interface.teams
         except ValueError:
             print("Invalid team ID ")
@@ -198,7 +192,6 @@ class Interface:
         print("8) Read Data")
         print("9) Total number of teams ")
         print("10) Cancel Participation ")
-        print("0) Quit Program ")
         print("---------------------------")
         print()
 

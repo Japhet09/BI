@@ -1,8 +1,6 @@
 # This program import the Interface class from the interface module
 # and perform differrent operations according to the user's choice.
-# To quit the program, sys module is used
 # =======================================================================
-import sys
 from interface import Interface
 
 # constants for the menu items
@@ -16,7 +14,6 @@ SAVE_DATA = 7
 READ_DATA = 8
 TOTAL_TEAMS = 9
 CANCEL_PARTICIPATION = 10
-QUIT_CHOICE = 0
 
 # constants for the sub-menu to update teams
 UPDATE_NAME = 51
@@ -25,8 +22,10 @@ UPDATE_FEES = 53
 
 
 def main():
-    # Initialize an infinite loop, exit when the user enter 0
-    while True:
+    # A user controlled variable to exit the program
+    QUIT_CHOICE = ""
+    
+    while QUIT_CHOICE != "Q":
         # DISPLAY THE MAIN MENU
         Interface.display_main_menu()
         try:
@@ -62,8 +61,6 @@ def main():
                 Interface.read_data()
             elif choice == TOTAL_TEAMS:
                 Interface.count_teams()
-            elif choice == QUIT_CHOICE:
-                sys.exit("Exiting the program")
             else:
                 print("Error: Invalid choice, use the menu")
                 continue
@@ -74,6 +71,8 @@ def main():
             # This happens when the user read_data before saving it to disk
             print("Make sure to save the teams before restoring the file")
             continue
+        QUIT_CHOICE = input(
+            "HIT ENTER TO CONTINUE OR Q FOLLOWED BY ENTER KEY TO EXIT ").upper()
 
 
 # Call the main function
