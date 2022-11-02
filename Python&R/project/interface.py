@@ -42,7 +42,7 @@ class Interface:
     def show_team_by_type():
         """Display team information by type"""
         try:
-            team_type = input("Type of team to show (Boys/Girls): ").strip()
+            team_type = input("Type of team to show (Boys/Girls): ").title()
             for t in Interface.teams:
                 if t.type == team_type:
                     print(t)
@@ -61,7 +61,7 @@ class Interface:
         """Update the team name based on the team id"""
         try:
             team_id = int(input("Enter team id to update: "))
-            new_name = input("New Team Name")
+            new_name = input("New Team Name: ")
             for t in Interface.teams:
                 if t.id == team_id:
                     t.name = new_name
@@ -76,7 +76,7 @@ class Interface:
         """Update the type of the team"""
         try:
             team_id = int(input("Enter team id to update: "))
-            new_type = input("New Team type")
+            new_type = input("New Team type: ")
             for t in Interface.teams:
                 if t.id == team_id:
                     t.type = new_type
@@ -84,7 +84,7 @@ class Interface:
                     print("There is no team with that ID")
             return Interface.teams
         except ValueError:
-            print("Enter valid ID or type")
+            print("Enter valid ID")
 
     # UPDATE TEAM FEE STATUS
     def update_fees():
@@ -92,20 +92,20 @@ class Interface:
         try:
             team_id = int(input("Enter team id to update: "))
             new_fee_paid = input("New Fee status (Y/N): ")
+            new_fee_amount = int(input("New Fee amount: "))
             for t in Interface.teams:
                 if t.id == team_id:
                     t.fee_paid = new_fee_paid
-                else:
-                    print("There is no team with that ID")
+                    t.fee_amount = new_fee_amount
             return Interface.teams
-        except:
-            print("Invalid ID/ Fee status")
+        except ValueError:
+            print("Team ID/ Fee amount should be an integer")
 
     # DELETE TEAM FROM LIST
     def delete_team():
         """Delete a team from the list of teams based on the id"""
         try:
-            team_id = int(input("Enter ID of the team you want to delete:"))
+            team_id = int(input("Enter ID of the team you want to delete: "))
             # remove team from the list
             for t in Interface.teams:
                 if t.id == team_id:
@@ -120,7 +120,7 @@ class Interface:
     def save_data():
         """Write each object to a file as a string"""
         with open("my_teams.txt", "w") as outfile:
-            # assign each team to a variable as a string
+            # assign each team object to a variable as a string
             for t in Interface.teams:
                 t_txt = f"{t.id}, {t.date}, {t.name}, {t.type}, {t.fee_paid}, {t.fee_amount}, {t.cancel}"
                 # write each team to the file in separate lines
@@ -151,7 +151,7 @@ class Interface:
                         t[2].strip(),  # name
                         t[3].strip(),  # type
                         t[4].strip(),  # fee_paid
-                        int(t[5].strip()),  # amount
+                        (t[5].strip()),  # amount
                         t[6].strip(),  # cancellation date
                     )
                 )
@@ -166,11 +166,11 @@ class Interface:
             for t in Interface.teams:
                 if t.fee_paid == True:
                     paid += 1
-                    total_fees += t.fee_amount
+                    total_fees += int(t.fee_amount)
             print(
-                f"Percentage of teams which paid the fee: {paid/len(Interface.teams):.1%}"
+                f"Percent of all teams which have paid the fee: {paid/len(Interface.teams):.1%}"
             )
-            print(f"Total Amount of Fees Paid: {total_fees}")
+            print(f"Total Amount of Fees Paid: {total_fees}$")
 
         except ZeroDivisionError:
             print("Please make sure there are teams in the list")

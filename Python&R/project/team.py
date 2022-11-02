@@ -1,4 +1,4 @@
-# The Team class will be imported into the interface program 
+# The Team class will be imported into the interface program
 # import datetime module to get the date
 import datetime
 
@@ -116,6 +116,6 @@ class Team:
             f"Name: {self.name}\n"
             f"Type: {self.type}\n"
             f"Fee Paid: {self.fee_paid}\n"
-            f"Fee Amount: {self.fee_amount}\n"
+            f"Fee Amount: {self.fee_amount}$\n"
             f"Cancelled on : {self.cancel}\n"
         )

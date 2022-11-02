@@ -45,7 +45,7 @@ def main():
             elif choice == UPDATE_TEAMS:
                 # display update sub menu
                 Interface.display_update_submenu()
-                choice = int(input("Enter Field to update: "))
+                choice = int(input("Enter Field to update from update sub menu: "))
                 if choice == UPDATE_NAME:
                     Interface.update_name()
                 elif choice == UPDATE_TYPE:
